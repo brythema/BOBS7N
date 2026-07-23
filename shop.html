@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | BOBS7N</title>
+    <meta name="description" content="Shop BOBS7N — Jackets, Jean Trousers, 2 Piece Sets, Hoodies, Varsity Jackets, Outerwear and Premium Tees. Handcrafted luxury streetwear from Nigeria.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="pre-mark"><img src="assets/logo.jpg" alt="BOBS7N"></div>
+        <div class="pre-line"></div>
+    </div>
+
+    <!-- ══════════ HEADER ══════════ -->
+    <header id="header">
+        <a href="index.html" class="brand">
+            <div class="brand-mark"><img src="assets/logo.jpg" alt="BOBS7N logo"></div>
+            <span class="logo">BOBS7N</span>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+    </header>
+
+    <!-- ══════════ MOBILE NAV OVERLAY ══════════ -->
+    <nav class="nav-overlay" id="navOverlay">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="current">Shop</a>
+        <a href="about.html">About</a>
+        <a href="about.html#contact">Contact</a>
+        <div class="nav-social">
+            <span title="Instagram">📷</span>
+            <span title="TikTok">🎵</span>
+        </div>
+    </nav>
+
+    <!-- ══════════ PAGE HERO ══════════ -->
+    <section class="page-hero">
+        <div class="small">Full Catalog</div>
+        <h1>Shop&nbsp;BOBS7N</h1>
+        <p>Luxury Streetwear · Ready-to-Wear · Made-to-Measure · Custom Pieces. Every piece handcrafted in Nigeria, limited production runs.</p>
+    </section>
+
+    <!-- ══════════ SHOP ══════════ -->
+    <section id="shop">
+        <div class="cat-tabs" id="catTabs"></div>
+        <div class="filter-chips" id="typeChips"></div>
+        <div class="cat-count" id="resultCount"></div>
+        <div class="cards" id="shopGrid"></div>
+    </section>
+
+    <!-- ══════════ MTM CALLOUT ══════════ -->
+    <section class="reveal">
+        <div class="mission-box">
+            <div class="m-label">Made-To-Measure</div>
+            <p>Want a custom fit or a bespoke piece? Message us your measurements on WhatsApp and we'll tailor it for you.</p>
+            <div style="margin-top:22px;">
+                <a href="https://wa.me/2340000000000" target="_blank" rel="noopener" class="btn gold">Start Custom Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer>
+        <div class="footer-logo"><img src="assets/logo.jpg" alt="BOBS7N"> BOBS7N</div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="https://wa.me/2340000000000" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="footer-social">
+            <span title="Instagram">📷</span>
+            <span title="TikTok">🎵</span>
+            <span title="Email">✉️</span>
+        </div>
+        <div class="copy">© 2026 BOBS7N. All Rights Reserved. Higher Than Fashion.</div>
+    </footer>
+
+    <!-- ══════════ QUICK VIEW MODAL ══════════ -->
+    <div class="modal-overlay" id="quickViewOverlay">
+        <div class="modal">
+            <button class="close-modal" onclick="closeQuickView()">&times;</button>
+            <img id="qvImg" src="" alt="Product">
+            <div class="modal-name" id="qvName"></div>
+            <div class="modal-price" id="qvPrice"></div>
+            <div class="modal-caption" id="qvCaption"></div>
+            <div class="size-label">Select Size</div>
+            <div class="size-selector" id="qvSizes">
+                <button class="size-btn" data-size="S">S</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn selected" data-size="L">L</button>
+                <button class="size-btn" data-size="XL">XL</button>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-cart" id="qvAddCart">Add To Cart</button>
+                <button class="modal-order" id="qvOrder">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ FLOATING BUTTONS ══════════ -->
+    <button class="floating" onclick="window.open('https://wa.me/2340000000000','_blank','noopener')" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">💬</button>
+    <button class="cartFloat" onclick="toggleCart()" aria-label="View Cart" title="View Cart">
+        🛍<span class="badge-count hidden" id="cartBadge">0</span>
+    </button>
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top" title="Back to top">↑</button>
+
+    <div class="sheet-backdrop" id="sheetBackdrop"></div>
+    <div class="sheet" id="sheet">
+        <h2>Selected Designs</h2>
+        <div id="list"></div>
+        <button class="send" onclick="sendAll()">Place Order On WhatsApp</button>
+    </div>
+
+    <script src="assets/app.js"></script>
+    <script src="assets/shop.js"></script>
+</body>
+</html>
