@@ -2,7 +2,7 @@
 // BOBS7N — SHARED APP LOGIC
 // ══════════════════════════════════════════════
 (function () {
-    const WHATSAPP_NUMBER = '2340000000000'; // TODO: update with real BOBS7N WhatsApp number
+    const WHATSAPP_NUMBER = '2348146139861'; // TODO: update with real BOBS7N WhatsApp number
 
     // ── SIGNATURE PAGE TRANSITION ──
     // Plays a 1-second gold wipe on entry, and on exit before navigating
