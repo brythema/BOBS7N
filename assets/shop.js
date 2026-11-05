@@ -1,19 +1,23 @@
 // ══════════════════════════════════════════════
 // BOBS7N — SHOP CATALOG (custom-made, WhatsApp-ordered)
-// Two lines only: Jackets + Jeans. No prices — every piece is
+// Three lines: Jackets, Jeans, Tops. No prices — every piece is
 // custom-made and ordered via WhatsApp.
 // ══════════════════════════════════════════════
 (function () {
 
     // Real product photos (local, in-repo)
     const IMG = {
-        // jackets (all denim, provided)
+        // jackets — denim (provided)
         j_noir:   'assets/products/jackets/mcfollis-EWDE__C43vk.jpg',
         j_alpine: 'assets/products/jackets/brock-wegner-7PuQifdU248.jpg',
         j_desert: 'assets/products/jackets/brock-wegner-sN9BqTtWJIE.jpg',
         j_drift:  'assets/products/jackets/brock-wegner-sXB3igXCXUY.jpg',
         j_frost:  'assets/products/jackets/kemal-alkan-_BDBEP0ePQc.jpg',
         j_sable:  'assets/products/jackets/aghil-pk-7RI7ab2y1Xk.jpg',
+        // jackets — leather (first set, provided)
+        j_crimson:'assets/products/firstset/WA0006.jpg',
+        j_ember:  'assets/products/firstset/WA0007.jpg',
+        j_regent: 'assets/products/firstset/WA0009.jpg',
         // jeans / bottoms (provided; WA0011 dropped — had a woman in frame)
         je_bloom:   'assets/products/jeans/WA0003.jpg',
         je_patch:   'assets/products/jeans/WA0004.jpg',
@@ -22,6 +26,10 @@
         je_mono:    'assets/products/jeans/WA0010.jpg',
         je_petal:   'assets/products/jeans/WA0013.jpg',
         je_acid:    'assets/products/jeans/WA0015.jpg',
+        // tops (first set, provided)
+        t_believer: 'assets/products/firstset/WA0008.jpg',
+        t_essence:  'assets/products/firstset/WA0002.jpg',
+        t_team:     'assets/products/firstset/WA0003.jpg',
     };
 
     const CAPTION = 'Custom-made to your measurements.';
@@ -29,24 +37,33 @@
     const CATEGORIES = [
         { key: 'jackets', label: 'Jackets' },
         { key: 'jeans', label: 'Jeans' },
+        { key: 'tops', label: 'Tops' },
     ];
 
     const PRODUCTS = [
-        // JACKETS
+        // JACKETS — denim
         { name: 'NOIR Street Denim',        cat: 'jackets', img: IMG.j_noir,   caption: CAPTION },
         { name: 'ALPINE Shearling Trucker', cat: 'jackets', img: IMG.j_alpine, caption: CAPTION },
         { name: 'DESERT Trucker Jacket',    cat: 'jackets', img: IMG.j_desert, caption: CAPTION },
         { name: 'DRIFT Denim Trucker',      cat: 'jackets', img: IMG.j_drift,  caption: CAPTION },
         { name: 'FROST Sherpa Jacket',      cat: 'jackets', img: IMG.j_frost,  caption: CAPTION },
         { name: 'SABLE Distressed Denim',   cat: 'jackets', img: IMG.j_sable,  caption: CAPTION },
+        // JACKETS — leather
+        { name: 'CRIMSON Maroon Leather',   cat: 'jackets', img: IMG.j_crimson, caption: CAPTION },
+        { name: 'EMBER Leather Biker',      cat: 'jackets', img: IMG.j_ember,  caption: CAPTION },
+        { name: 'REGENT Puffed Leather',    cat: 'jackets', img: IMG.j_regent, caption: CAPTION },
         // JEANS / BOTTOMS
-        { name: 'BLOOM Relaxed Print',      cat: 'jeans', img: IMG.je_bloom,    caption: CAPTION },
-        { name: 'PATCHWORK Wide-Leg',       cat: 'jeans', img: IMG.je_patch,    caption: CAPTION },
-        { name: 'CHROMA Cargo',             cat: 'jeans', img: IMG.je_chroma,   caption: CAPTION },
+        { name: 'BLOOM Relaxed Print',      cat: 'jeans', img: IMG.je_bloom,   caption: CAPTION },
+        { name: 'PATCHWORK Wide-Leg',       cat: 'jeans', img: IMG.je_patch,   caption: CAPTION },
+        { name: 'CHROMA Cargo',             cat: 'jeans', img: IMG.je_chroma,  caption: CAPTION },
         { name: 'TACTICAL Wide-Leg Cargo',  cat: 'jeans', img: IMG.je_tactical, caption: CAPTION },
-        { name: 'MONO Straight',            cat: 'jeans', img: IMG.je_mono,     caption: CAPTION },
-        { name: 'PETAL Wide-Leg',           cat: 'jeans', img: IMG.je_petal,    caption: CAPTION },
-        { name: 'ACID Spider-Wash',         cat: 'jeans', img: IMG.je_acid,     caption: CAPTION },
+        { name: 'MONO Straight',            cat: 'jeans', img: IMG.je_mono,    caption: CAPTION },
+        { name: 'PETAL Wide-Leg',           cat: 'jeans', img: IMG.je_petal,   caption: CAPTION },
+        { name: 'ACID Spider-Wash',         cat: 'jeans', img: IMG.je_acid,    caption: CAPTION },
+        // TOPS
+        { name: 'BELIEVER Zip Pullover',    cat: 'tops', img: IMG.t_believer, caption: CAPTION },
+        { name: 'ESSENCE Graphic Top',      cat: 'tops', img: IMG.t_essence,  caption: CAPTION },
+        { name: 'TEAM Graphic Top',         cat: 'tops', img: IMG.t_team,     caption: CAPTION },
     ];
 
     let activeCat = 'all';
