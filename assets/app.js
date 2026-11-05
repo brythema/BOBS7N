@@ -5,9 +5,7 @@
     const WHATSAPP_NUMBER = '2348146139861'; // TODO: update with real BOBS7N WhatsApp number
 
     // ── SIGNATURE PAGE TRANSITION ──
-    // Plays a 1-second gold wipe on entry, and on exit before navigating
-    // to another internal page. Same signature on every page = the brand's
-    // "unforgettable moment" the mockup asked for.
+    // A concise gold signature wipe. Each direction completes in ~0.42s.
     function buildTransitionEl() {
         if (document.getElementById('pageTransition')) return;
         const el = document.createElement('div');
@@ -21,30 +19,23 @@
     // Play entry animation on every page load
     window.addEventListener('DOMContentLoaded', () => {
         transitionEl.classList.add('run-in');
-        setTimeout(() => transitionEl.classList.remove('run-in'), 600);
+        setTimeout(() => transitionEl.classList.remove('run-in'), 430);
     });
 
     // Intercept internal links for the exit animation
     document.addEventListener('click', function (e) {
         const link = e.target.closest('a[href]');
-        if (!link) return;
+        if (!link || link.target === '_blank' || e.defaultPrevented) return;
         const href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel') || link.target === '_blank') return;
-        if (href.endsWith('.html') || href === '/' || href === './') {
-            e.preventDefault();
-            transitionEl.classList.add('run-out');
-            setTimeout(() => { window.location.href = href; }, 480);
-        }
-    });
-
-    // ── PRELOADER ──
-    window.addEventListener('load', () => {
-        const preloader = document.getElementById('preloader');
-        if (!preloader) return;
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            setTimeout(() => { preloader.style.display = 'none'; }, 600);
-        }, 1000);
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        let destination;
+        try { destination = new URL(link.href, window.location.href); }
+        catch (_) { return; }
+        if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname) return;
+        e.preventDefault();
+        transitionEl.classList.remove('run-in');
+        transitionEl.classList.add('run-out');
+        setTimeout(() => { window.location.href = destination.href; }, 430);
     });
 
     // ── HEADER SCROLL ──
@@ -54,7 +45,7 @@
         const scrolled = window.scrollY > 60;
         if (header) header.classList.toggle('scrolled', scrolled);
         if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
-    });
+    }, { passive: true });
 
     // ── MOBILE MENU ──
     const menuBtn = document.getElementById('menuBtn');
@@ -66,17 +57,26 @@
             else {
                 navOverlay.classList.add('active');
                 menuBtn.classList.add('active');
+                menuBtn.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             }
         });
         navOverlay.addEventListener('click', function (e) {
-            if (e.target === navOverlay) closeMenu();
+            if (e.target === navOverlay) { closeMenu(); return; }
+            const navLink = e.target.closest('a[href]');
+            if (navLink) {
+                try {
+                    const target = new URL(navLink.href, window.location.href);
+                    if (target.pathname === window.location.pathname) closeMenu();
+                } catch (_) { /* Leave normal browser navigation untouched. */ }
+            }
         });
     }
     window.closeMenu = function () {
         if (!navOverlay || !menuBtn) return;
         navOverlay.classList.remove('active');
         menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     };
 
@@ -86,7 +86,7 @@
         const ctx = canvas.getContext('2d');
         let particles = [];
         let animId;
-        const maxParticles = 45;
+        const maxParticles = window.innerWidth <= 767 ? 24 : 45;
 
         function resizeCanvas() {
             const hero = canvas.parentElement;
@@ -282,7 +282,7 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
                     const staggered = entry.target.querySelectorAll('.reveal-stagger');
-                    staggered.forEach((child, i) => setTimeout(() => child.classList.add('show'), i * 100));
+                    staggered.forEach((child, i) => setTimeout(() => child.classList.add('show'), (i % 4) * 55));
                 }
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
@@ -290,7 +290,7 @@
 
         const staggerObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
-                if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('show'), index * 80);
+                if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('show'), (index % 4) * 55);
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
         document.querySelectorAll('.reveal-stagger').forEach(el => { if (!el.closest('.reveal')) staggerObserver.observe(el); });

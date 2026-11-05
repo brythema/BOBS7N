@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | BOBS7N</title>
+    <title>About &amp; Contact | BOBS7N</title>
     <meta name="description" content="BOBS7N — where fashion transcends. Learn our story, values, and mission: redefining African luxury streetwear for a global audience.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,22 @@
 </head>
 <body>
 
-    <div id="preloader">
-        <div class="pre-mark"><img src="assets/logo.jpg" alt="BOBS7N"></div>
-        <div class="pre-line"></div>
-    </div>
-
     <!-- ══════════ HEADER ══════════ -->
     <header id="header">
         <a href="index.html" class="brand">
-            <div class="brand-mark"><img src="assets/logo.jpg" alt="BOBS7N logo"></div>
+            <div class="brand-mark"><img src="assets/logo.webp" alt="BOBS7N logo"></div>
             <span class="logo">BOBS7N</span>
         </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="navOverlay" aria-expanded="false">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
     </header>
 
     <!-- ══════════ MOBILE NAV OVERLAY ══════════ -->
-    <nav class="nav-overlay" id="navOverlay">
+    <nav class="nav-overlay" id="navOverlay" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="about.html" class="current">About</a>
-        <a href="about.html#contact">Contact</a>
+        <a href="shop.html#featured">Shop &amp; Designs</a>
+        <a href="about.html#about" class="current">About &amp; Contact</a>
         <div class="nav-social">
             <span title="Instagram">📷</span>
             <span title="TikTok">🎵</span>
@@ -41,10 +35,14 @@
     </nav>
 
     <!-- ══════════ PAGE HERO ══════════ -->
-    <section class="page-hero">
-        <div class="small">Our Story</div>
-        <h1>Higher Than<br>Fashion</h1>
-        <p>Where Fashion Transcends. A luxury streetwear house built and handcrafted in Nigeria.</p>
+    <section class="page-hero about-hero" id="about">
+        <div class="page-hero-image about-hero-image" aria-hidden="true"><img src="assets/products/jackets/mcfollis-EWDE__C43vk.webp" alt="" fetchpriority="high" decoding="async"></div>
+        <div class="page-hero-copy">
+            <div class="small">Our Story · Our Standard</div>
+            <h1>More Than<br><em>Fashion.</em></h1>
+            <p>Rooted in Nigeria. Built for self-expression. A luxury streetwear house where every detail has a purpose.</p>
+            <a class="text-link" href="#contact">Connect with BOBS7N <span>↓</span></a>
+        </div>
     </section>
 
     <!-- ══════════ BRAND STORY ══════════ -->
@@ -64,9 +62,9 @@
     <!-- ══════════ EDITORIAL IMAGE ══════════ -->
     <section class="reveal">
         <div class="lookbook-grid">
-            <div class="lookbook-item"><img src="assets/products/jackets/mcfollis-EWDE__C43vk.jpg" alt="BOBS7N custom piece" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/jeans/WA0005.jpg" alt="Custom-made bottoms" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/jackets/kemal-alkan-_BDBEP0ePQc.jpg" alt="Tailored jacket detail" loading="lazy"></div>
+            <div class="lookbook-item"><img src="assets/products/jackets/mcfollis-EWDE__C43vk.webp" alt="BOBS7N custom piece" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/jeans/WA0005.webp" alt="Custom-made bottoms" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/jackets/kemal-alkan-_BDBEP0ePQc.webp" alt="Tailored jacket detail" loading="lazy" decoding="async"></div>
         </div>
     </section>
 
@@ -111,32 +109,37 @@
             <span class="type-pill">Limited Edition Collections</span>
         </div>
         <div style="margin-top:28px;">
-            <a href="shop.html" class="btn gold">Explore The Shop</a>
+            <a href="shop.html#featured" class="btn gold">Explore Shop &amp; Designs</a>
         </div>
     </section>
 
     <!-- ══════════ CONTACT / NEWSLETTER ══════════ -->
-    <section class="reveal" id="contact">
+    <section class="contact-section reveal" id="contact">
+        <div class="contact-intro">
+            <span class="eyebrow">LET'S CONNECT</span>
+            <h2 class="title">Your next statement<br><em>starts here.</em></h2>
+            <p>Questions about a piece, a custom fit, or a collaboration? Speak with the BOBS7N team directly.</p>
+            <a href="https://wa.me/2348146139861" target="_blank" rel="noopener" class="btn gold">Start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
         <div class="newsletter-box">
-            <h3>Join The Circle</h3>
-            <p>Be the first to know about drops, exclusives, and the world of BOBS7N. Or reach us directly on WhatsApp.</p>
+            <span class="eyebrow">STAY IN THE CIRCLE</span>
+            <h3>First to know.<br>Always in style.</h3>
+            <p>Keep up with new drops, limited pieces and the world of BOBS7N.</p>
             <form class="newsletter-form" onsubmit="handleNewsletter(event)">
                 <input type="email" placeholder="Your email address" required aria-label="Email">
-                <button type="submit">Subscribe</button>
+                <button type="submit">Join</button>
             </form>
-            <div style="margin-top:18px;">
-                <a href="https://wa.me/2348146139861" target="_blank" rel="noopener" class="btn dark">Chat On WhatsApp</a>
-            </div>
+            <div class="contact-whatsapp"><span class="contact-dot"></span><span>Prefer WhatsApp?</span><a href="https://wa.me/2348146139861" target="_blank" rel="noopener">Chat with us ↗</a></div>
         </div>
     </section>
 
     <!-- ══════════ FOOTER ══════════ -->
     <footer>
-        <div class="footer-logo"><img src="assets/logo.jpg" alt="BOBS7N"> BOBS7N</div>
+        <div class="footer-logo"><img src="assets/logo.webp" alt="BOBS7N"> BOBS7N</div>
         <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="about.html">About</a>
+            <a href="shop.html#featured">Shop &amp; Designs</a>
+            <a href="about.html#about">About &amp; Contact</a>
             <a href="https://wa.me/2348146139861" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="footer-social">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | BOBS7N</title>
+    <title>Shop &amp; Designs | BOBS7N</title>
     <meta name="description" content="Shop BOBS7N — Jackets, Jean Trousers, 2 Piece Sets, Hoodies, Varsity Jackets, Outerwear and Premium Tees. Handcrafted luxury streetwear from Nigeria.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,22 @@
 </head>
 <body>
 
-    <div id="preloader">
-        <div class="pre-mark"><img src="assets/logo.jpg" alt="BOBS7N"></div>
-        <div class="pre-line"></div>
-    </div>
-
     <!-- ══════════ HEADER ══════════ -->
     <header id="header">
         <a href="index.html" class="brand">
-            <div class="brand-mark"><img src="assets/logo.jpg" alt="BOBS7N logo"></div>
+            <div class="brand-mark"><img src="assets/logo.webp" alt="BOBS7N logo"></div>
             <span class="logo">BOBS7N</span>
         </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="navOverlay" aria-expanded="false">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
     </header>
 
     <!-- ══════════ MOBILE NAV OVERLAY ══════════ -->
-    <nav class="nav-overlay" id="navOverlay">
+    <nav class="nav-overlay" id="navOverlay" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="shop.html" class="current">Shop</a>
-        <a href="about.html">About</a>
-        <a href="about.html#contact">Contact</a>
+        <a href="shop.html#featured" class="current">Shop &amp; Designs</a>
+        <a href="about.html#about">About &amp; Contact</a>
         <div class="nav-social">
             <span title="Instagram">📷</span>
             <span title="TikTok">🎵</span>
@@ -41,14 +35,19 @@
     </nav>
 
     <!-- ══════════ PAGE HERO ══════════ -->
-    <section class="page-hero">
-        <div class="small">Full Catalog</div>
-        <h1>Shop&nbsp;BOBS7N</h1>
-        <p>Luxury Streetwear · Ready-to-Wear · Made-to-Measure · Custom Pieces. Every piece handcrafted in Nigeria, limited production runs.</p>
+    <section class="page-hero shop-hero">
+        <div class="page-hero-image" aria-hidden="true"><img src="assets/products/firstset/WA0006.webp" alt="" fetchpriority="high" decoding="async"></div>
+        <div class="page-hero-copy">
+            <div class="small">The BOBS7N Collection</div>
+            <h1>Shop <em>&amp; Designs</em></h1>
+            <p>Explore the collection. Find your expression. Every piece is handcrafted in Nigeria and made to order with intention.</p>
+            <a class="text-link" href="#featured">Discover the pieces <span>↓</span></a>
+        </div>
     </section>
 
     <!-- ══════════ SHOP ══════════ -->
-    <section id="shop">
+    <section id="shop" class="catalog-section">
+        <div class="catalog-heading" id="featured"><span class="eyebrow">CURATED FOR THE BOLD</span><h2 class="title">The Collection</h2><p class="title-sub">Jackets, denim and statement tops. Choose a piece to view it, then order directly through WhatsApp.</p></div>
         <div class="cat-tabs" id="catTabs"></div>
         <div class="filter-chips" id="typeChips"></div>
         <div class="cat-count" id="resultCount"></div>
@@ -68,11 +67,11 @@
 
     <!-- ══════════ FOOTER ══════════ -->
     <footer>
-        <div class="footer-logo"><img src="assets/logo.jpg" alt="BOBS7N"> BOBS7N</div>
+        <div class="footer-logo"><img src="assets/logo.webp" alt="BOBS7N"> BOBS7N</div>
         <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="about.html">About</a>
+            <a href="shop.html#featured">Shop &amp; Designs</a>
+            <a href="about.html#about">About &amp; Contact</a>
             <a href="https://wa.me/2348146139861" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="footer-social">

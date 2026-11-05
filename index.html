@@ -12,29 +12,22 @@
 </head>
 <body>
 
-    <div id="preloader">
-        <div class="pre-mark"><img src="assets/logo.jpg" alt="BOBS7N"></div>
-        <div class="pre-line"></div>
-    </div>
-
     <!-- ══════════ HEADER ══════════ -->
     <header id="header">
         <a href="index.html" class="brand">
-            <div class="brand-mark"><img src="assets/logo.jpg" alt="BOBS7N logo"></div>
+            <div class="brand-mark"><img src="assets/logo.webp" alt="BOBS7N logo"></div>
             <span class="logo">BOBS7N</span>
         </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="navOverlay" aria-expanded="false">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
     </header>
 
     <!-- ══════════ MOBILE NAV OVERLAY ══════════ -->
-    <nav class="nav-overlay" id="navOverlay">
+    <nav class="nav-overlay" id="navOverlay" aria-label="Main navigation">
         <a href="index.html" class="current">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="shop.html#featured">Designs</a>
-        <a href="about.html">About</a>
-        <a href="about.html#contact">Contact</a>
+        <a href="shop.html#featured">Shop &amp; Designs</a>
+        <a href="about.html#about">About &amp; Contact</a>
         <div class="nav-social">
             <span title="Instagram">📷</span>
             <span title="TikTok">🎵</span>
@@ -43,16 +36,23 @@
 
     <!-- ══════════ HERO ══════════ -->
     <section class="hero" id="home">
-        <canvas id="heroCanvas"></canvas>
+        <div class="hero-visual" aria-hidden="true">
+            <img src="assets/products/firstset/WA0009.webp" alt="" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <canvas id="heroCanvas" aria-hidden="true"></canvas>
         <div class="heroContent">
-            <div class="small">Luxury Streetwear · Made in Nigeria</div>
-            <h1>Higher<br>Than<br>Fashion</h1>
-            <p class="tag">Where Fashion Transcends. Handcrafted in Nigeria for the bold, the confident, the believers.</p>
+            <div class="hero-kicker"><span></span> Luxury Streetwear · Made in Nigeria</div>
+            <p class="hero-overline">THE BELIEVER'S STANDARD</p>
+            <h1>Higher Than<br><em>Fashion.</em></h1>
+            <p class="tag">Where fashion transcends. Designed with intention, handcrafted in Nigeria, and made for those who move differently.</p>
             <div class="buttons">
-                <a href="shop.html" class="btn gold">Shop The Collection</a>
+                <a href="shop.html#featured" class="btn gold">Explore The Collection <span aria-hidden="true">↗</span></a>
                 <a href="https://wa.me/2348146139861" class="btn dark" target="_blank" rel="noopener">Order on WhatsApp</a>
             </div>
+            <div class="hero-footnote"><span>01</span><span>DESIGNED TO STAND APART</span></div>
         </div>
+        <div class="hero-index" aria-hidden="true">BOBS7N <span>—</span> EST. 7N</div>
     </section>
 
     <!-- ══════════ BRAND STORY ══════════ -->
@@ -72,19 +72,19 @@
         <div class="line"></div>
         <div class="collections">
             <a class="collection" href="shop.html?cat=jackets">
-                <img src="assets/products/jackets/mcfollis-EWDE__C43vk.jpg" alt="Jackets — custom-made denim" loading="lazy">
+                <img src="assets/products/jackets/mcfollis-EWDE__C43vk.webp" alt="Jackets — custom-made denim" loading="lazy" decoding="async">
                 <div class="gradient-overlay"></div>
                 <small>Custom-made · Made to order</small>
                 <span>Jackets</span>
             </a>
             <a class="collection" href="shop.html?cat=jeans">
-                <img src="assets/products/jeans/WA0004.jpg" alt="Jeans — custom-made bottoms" loading="lazy">
+                <img src="assets/products/jeans/WA0004.webp" alt="Jeans — custom-made bottoms" loading="lazy" decoding="async">
                 <div class="gradient-overlay"></div>
                 <small>Custom-made · Made to order</small>
                 <span>Jeans</span>
             </a>
             <a class="collection" href="shop.html?cat=tops">
-                <img src="assets/products/firstset/WA0002.jpg" alt="Tops — custom-made tees & pullovers" loading="lazy">
+                <img src="assets/products/firstset/WA0002.webp" alt="Tops — custom-made tees & pullovers" loading="lazy" decoding="async">
                 <div class="gradient-overlay"></div>
                 <small>Custom-made · Made to order</small>
                 <span>Tops</span>
@@ -98,11 +98,11 @@
         <p class="title-sub">Every piece is custom-made to your exact measurements — no two are the same.</p>
         <div class="line"></div>
         <div class="cards">
-            <div class="card reveal-stagger" data-product="NOIR Street Denim" data-img="assets/products/jackets/mcfollis-EWDE__C43vk.jpg" data-caption="Custom-made to your measurements.">
+            <div class="card reveal-stagger" data-product="NOIR Street Denim" data-img="assets/products/jackets/mcfollis-EWDE__C43vk.webp" data-caption="Custom-made to your measurements.">
                 <div class="img-wrap">
                     <span class="badge">Custom-Made</span>
-                    <img src="assets/products/jackets/mcfollis-EWDE__C43vk.jpg" alt="NOIR Street Denim jacket" loading="lazy">
-                    <button class="quick-view-trigger" onclick="event.stopPropagation(); openQuickView('NOIR Street Denim','assets/products/jackets/mcfollis-EWDE__C43vk.jpg','Custom-made to your measurements.','')">Quick View</button>
+                    <img src="assets/products/jackets/mcfollis-EWDE__C43vk.webp" alt="NOIR Street Denim jacket" loading="lazy" decoding="async">
+                    <button class="quick-view-trigger" onclick="event.stopPropagation(); openQuickView('NOIR Street Denim','assets/products/jackets/mcfollis-EWDE__C43vk.webp','Custom-made to your measurements.','')">Quick View</button>
                 </div>
                 <div class="info">
                     <div class="label">Jackets</div>
@@ -114,11 +114,11 @@
                 </div>
             </div>
 
-            <div class="card reveal-stagger" data-product="ALPINE Shearling Trucker" data-img="assets/products/jackets/brock-wegner-7PuQifdU248.jpg" data-caption="Custom-made to your measurements.">
+            <div class="card reveal-stagger" data-product="ALPINE Shearling Trucker" data-img="assets/products/jackets/brock-wegner-7PuQifdU248.webp" data-caption="Custom-made to your measurements.">
                 <div class="img-wrap">
                     <span class="badge">Custom-Made</span>
-                    <img src="assets/products/jackets/brock-wegner-7PuQifdU248.jpg" alt="ALPINE Shearling Trucker jacket" loading="lazy">
-                    <button class="quick-view-trigger" onclick="event.stopPropagation(); openQuickView('ALPINE Shearling Trucker','assets/products/jackets/brock-wegner-7PuQifdU248.jpg','Custom-made to your measurements.','')">Quick View</button>
+                    <img src="assets/products/jackets/brock-wegner-7PuQifdU248.webp" alt="ALPINE Shearling Trucker jacket" loading="lazy" decoding="async">
+                    <button class="quick-view-trigger" onclick="event.stopPropagation(); openQuickView('ALPINE Shearling Trucker','assets/products/jackets/brock-wegner-7PuQifdU248.webp','Custom-made to your measurements.','')">Quick View</button>
                 </div>
                 <div class="info">
                     <div class="label">Jackets</div>
@@ -130,11 +130,11 @@
                 </div>
             </div>
 
-            <div class="card reveal-stagger" data-product="PATCHWORK Wide-Leg" data-img="assets/products/jeans/WA0004.jpg" data-caption="Custom-made to your measurements.">
+            <div class="card reveal-stagger" data-product="PATCHWORK Wide-Leg" data-img="assets/products/jeans/WA0004.webp" data-caption="Custom-made to your measurements.">
                 <div class="img-wrap">
                     <span class="badge">Custom-Made</span>
-                    <img src="assets/products/jeans/WA0004.jpg" alt="PATCHWORK Wide-Leg jeans" loading="lazy">
-                    <button class="quick-view-trigger" onclick="event.stopPropagation(); openQuickView('PATCHWORK Wide-Leg','assets/products/jeans/WA0004.jpg','Custom-made to your measurements.','')">Quick View</button>
+                    <img src="assets/products/jeans/WA0004.webp" alt="PATCHWORK Wide-Leg jeans" loading="lazy" decoding="async">
+                    <button class="quick-view-trigger" onclick="event.stopPropagation(); openQuickView('PATCHWORK Wide-Leg','assets/products/jeans/WA0004.webp','Custom-made to your measurements.','')">Quick View</button>
                 </div>
                 <div class="info">
                     <div class="label">Jeans</div>
@@ -147,7 +147,7 @@
             </div>
         </div>
         <div style="text-align:center; margin-top:34px;">
-            <a href="shop.html" class="btn gold">View Full Shop</a>
+            <a href="shop.html#featured" class="btn gold">Explore All Designs</a>
         </div>
     </section>
 
@@ -156,12 +156,12 @@
         <h2 class="title">Lookbook</h2>
         <div class="line"></div>
         <div class="lookbook-grid">
-            <div class="lookbook-item"><img src="assets/products/firstset/WA0006.jpg" alt="Look 1" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/jackets/mcfollis-EWDE__C43vk.jpg" alt="Look 2" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/jeans/WA0004.jpg" alt="Look 3" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/firstset/WA0007.jpg" alt="Look 4" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/jackets/kemal-alkan-_BDBEP0ePQc.jpg" alt="Look 5" loading="lazy"></div>
-            <div class="lookbook-item"><img src="assets/products/jeans/WA0013.jpg" alt="Look 6" loading="lazy"></div>
+            <div class="lookbook-item"><img src="assets/products/firstset/WA0006.webp" alt="Look 1" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/jackets/mcfollis-EWDE__C43vk.webp" alt="Look 2" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/jeans/WA0004.webp" alt="Look 3" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/firstset/WA0007.webp" alt="Look 4" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/jackets/kemal-alkan-_BDBEP0ePQc.webp" alt="Look 5" loading="lazy" decoding="async"></div>
+            <div class="lookbook-item"><img src="assets/products/jeans/WA0013.webp" alt="Look 6" loading="lazy" decoding="async"></div>
         </div>
     </section>
 
@@ -202,11 +202,11 @@
 
     <!-- ══════════ FOOTER ══════════ -->
     <footer>
-        <div class="footer-logo"><img src="assets/logo.jpg" alt="BOBS7N"> BOBS7N</div>
+        <div class="footer-logo"><img src="assets/logo.webp" alt="BOBS7N"> BOBS7N</div>
         <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="about.html">About</a>
+            <a href="shop.html#featured">Shop &amp; Designs</a>
+            <a href="about.html#about">About &amp; Contact</a>
             <a href="https://wa.me/2348146139861" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="footer-social">
