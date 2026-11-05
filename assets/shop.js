@@ -3,20 +3,42 @@
 // ══════════════════════════════════════════════
 (function () {
 
+    // Image sources: real BOBS7N product photos (local, in-repo) + Pexels CDN
+    // (keyless, hotlinkable). `P(id)` builds a 3:4 portrait crop.
+    const P = id => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop&fm=jpg`;
     const IMG = {
-        leather: 'https://images.unsplash.com/photo-1632958983989-49773325c326?w=900&q=80',
-        blazer: 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=900&q=80',
-        brownJacket: 'https://images.unsplash.com/photo-1614252367687-9d1e45da435e?w=900&q=80',
-        brickWall: 'https://images.unsplash.com/photo-1599725728598-dc7ed109ff89?w=900&q=80',
-        buttonUp: 'https://images.unsplash.com/photo-1614010966237-74489a16848b?w=900&q=80',
-        twoMen: 'https://images.unsplash.com/photo-1540406092050-a3f48c9d50e2?w=900&q=80',
-        womenGroup: 'https://images.unsplash.com/photo-1733322992706-1210ca79f4df?w=900&q=80',
-        womanPattern: 'https://images.unsplash.com/photo-1782528013490-ae62fb5167ba?w=900&q=80',
-        womanOveralls: 'https://images.unsplash.com/flagged/photo-1553277024-e6c4b3acb849?w=900&q=80',
-        womanRed: 'https://images.unsplash.com/photo-1733322991133-2de13aa12c57?w=900&q=80',
-        runwayOrange: 'https://images.unsplash.com/photo-1733324961657-8c60ff1e7c1c?w=900&q=80',
-        crowdMan: 'https://images.unsplash.com/photo-1733322987284-4210857c2ada?w=900&q=80',
-        crowdShow: 'https://images.unsplash.com/photo-1733322987267-f691d5be2bc6?w=900&q=80',
+        // real BOBS7N product photos (owner-supplied)
+        saddleLeather: 'assets/products/WA0007.jpg', // brown biker leather, 1 model
+        maroonLeather: 'assets/products/WA0006.jpg', // maroon leather, 2 models
+        maroonBomber:  'assets/products/WA0009.jpg', // maroon bomber, BOBS7N patch
+        brownLeather:  'assets/products/WA0003.jpg', // brown leather + matching pants
+        zipPullover:   'assets/products/WA0008.jpg', // black zip pullover "TEAM BELIEVER"
+        graphicTop:    'assets/products/WA0002.jpg',  // white graphic top
+        // pexels, matched to garment type (African-represented where available)
+        denimJacket: P('36607477'),
+        suedeJacket: P('4197168'),
+        jeansStreet: P('533733'),
+        jeansRipped: P('13187713'),
+        jeansUrban:  P('36718240'),
+        twoPiece:    P('26744884'),
+        twoPieceAlt: P('15661635'),
+        tracksuit:   P('31094919'),
+        hoodieOversized: P('16982868'),
+        hoodieStudio: P('7479825'),
+        varsityBlue: P('32483235'),
+        varsityRed:  P('14854328'),
+        varsityVintage: P('10887357'),
+        trenchDetail: P('19192235'),
+        trench:      P('5120186'),
+        coats:       P('5263493'),
+        teeHangers:  P('32963962'),
+        teeOversized: P('2451200'),
+        afroJacket:  P('36957074'),
+        afroRetro:   P('36957075'),
+        afrTraditional: P('40204424'),
+        afrStreet:   P('10698019'),
+        streetBw:    P('34751422'),
+        streetBag:   P('27844486'),
     };
 
     // ── CATEGORY DEFINITIONS ──
@@ -48,39 +70,39 @@
     // ── PRODUCT CATALOG ──
     const PRODUCTS = [
         // JACKETS
-        { name: 'OBSIDIAN Leather Jacket', cat: 'jackets', type: 'leather', price: '₦185,000', img: IMG.leather, badge: 'Limited', caption: 'Full-grain leather. Crafted for those who lead.' },
-        { name: 'ECLIPSE Denim Jacket', cat: 'jackets', type: 'denim', price: '₦95,000', img: IMG.brownJacket, badge: 'Premium', caption: 'Washed denim, gold-stitched detailing.' },
-        { name: 'REGENT Suede Jacket', cat: 'jackets', type: 'suede', price: '₦165,000', img: IMG.blazer, badge: 'New', caption: 'Soft suede shell, tailored silhouette.' },
+        { name: 'SADDLE Leather Jacket', cat: 'jackets', type: 'leather', price: '₦185,000', img: IMG.saddleLeather, badge: 'Limited', caption: 'Saddle-brown full-grain leather. Crafted for those who lead.' },
+        { name: 'ECLIPSE Denim Jacket', cat: 'jackets', type: 'denim', price: '₦95,000', img: IMG.denimJacket, badge: 'Premium', caption: 'Washed denim, gold-stitched detailing.' },
+        { name: 'REGENT Suede Jacket', cat: 'jackets', type: 'suede', price: '₦165,000', img: IMG.suedeJacket, badge: 'New', caption: 'Soft suede shell, tailored silhouette.' },
 
         // JEAN TROUSERS
-        { name: 'AVENUE Street Jeans', cat: 'jeans', type: 'street', price: '₦58,000', img: IMG.brickWall, badge: 'Bestseller', caption: 'Relaxed street-fit denim, everyday luxury.' },
-        { name: 'FRACTURE Ripped Jeans', cat: 'jeans', type: 'ripped', price: '₦62,000', img: IMG.twoMen, badge: 'New', caption: 'Hand-distressed detailing, tapered leg.' },
-        { name: 'FOUNDATION Straight Jeans', cat: 'jeans', type: 'straight', price: '₦55,000', img: IMG.buttonUp, badge: 'Classic', caption: 'Clean straight-fit denim, built to last.' },
+        { name: 'AVENUE Street Jeans', cat: 'jeans', type: 'street', price: '₦58,000', img: IMG.jeansStreet, badge: 'Bestseller', caption: 'Relaxed street-fit denim, everyday luxury.' },
+        { name: 'FRACTURE Ripped Jeans', cat: 'jeans', type: 'ripped', price: '₦62,000', img: IMG.jeansRipped, badge: 'New', caption: 'Hand-distressed detailing, tapered leg.' },
+        { name: 'FOUNDATION Straight Jeans', cat: 'jeans', type: 'straight', price: '₦55,000', img: IMG.jeansUrban, badge: 'Classic', caption: 'Clean straight-fit denim, built to last.' },
 
         // 2 PIECE SETS
-        { name: 'VELVET NOIR 2-Piece', cat: 'twopiece', type: 'others', price: '₦120,000', img: IMG.womanOveralls, badge: 'New', caption: 'Matching shirt & trouser. Quiet confidence.' },
-        { name: 'MONARCH Denim Set', cat: 'twopiece', type: 'jeans', price: '₦110,000', img: IMG.womanPattern, badge: 'Premium', caption: 'Coordinated denim shirt & trouser set.' },
-        { name: 'DYNASTY Tracksuit Set', cat: 'twopiece', type: 'tracksuit', price: '₦98,000', img: IMG.womenGroup, badge: 'Bestseller', caption: 'Premium fleece tracksuit, gold trims.' },
+        { name: 'VELVET NOIR 2-Piece', cat: 'twopiece', type: 'others', price: '₦120,000', img: IMG.twoPiece, badge: 'New', caption: 'Matching shirt & trouser. Quiet confidence.' },
+        { name: 'MONARCH Co-ord Set', cat: 'twopiece', type: 'jeans', price: '₦110,000', img: IMG.twoPieceAlt, badge: 'Premium', caption: 'Coordinated shirt & trouser set.' },
+        { name: 'DYNASTY Set', cat: 'twopiece', type: 'tracksuit', price: '₦98,000', img: IMG.tracksuit, badge: 'Bestseller', caption: 'Premium co-ord set, gold trims.' },
 
         // HOODIES
-        { name: 'SOVEREIGN Oversized Hoodie', cat: 'hoodies', type: 'oversized', price: '₦48,000', img: IMG.buttonUp, badge: 'Bestseller', caption: 'Heavyweight cotton, oversized fit.' },
-        { name: 'LEGACY Cropped Hoodie', cat: 'hoodies', type: 'cropped', price: '₦42,000', img: IMG.womanRed, badge: 'New', caption: 'Cropped silhouette, embroidered crest.' },
-        { name: 'ASCEND Zip-Up Hoodie', cat: 'hoodies', type: 'zip', price: '₦52,000', img: IMG.crowdMan, badge: 'Premium', caption: 'Full-zip fleece with gold hardware.' },
+        { name: 'SOVEREIGN Oversized Hoodie', cat: 'hoodies', type: 'oversized', price: '₦48,000', img: IMG.hoodieOversized, badge: 'Bestseller', caption: 'Heavyweight cotton, oversized fit.' },
+        { name: 'LEGACY Studio Hoodie', cat: 'hoodies', type: 'cropped', price: '₦42,000', img: IMG.hoodieStudio, badge: 'New', caption: 'Relaxed silhouette, embroidered crest.' },
+        { name: 'BELIEVER Zip Hoodie', cat: 'hoodies', type: 'zip', price: '₦52,000', img: IMG.zipPullover, badge: 'Premium', caption: 'Full-zip fleece, "TEAM BELIEVER" print, gold hardware.' },
 
         // VARSITY JACKETS
-        { name: 'CROWNGUARD Letterman', cat: 'varsity', type: 'letterman', price: '₦140,000', img: IMG.blazer, badge: 'Limited', caption: 'Wool body, leather sleeves, chenille patch.' },
-        { name: 'HERITAGE Bomber', cat: 'varsity', type: 'bomber', price: '₦130,000', img: IMG.leather, badge: 'New', caption: 'Satin bomber, ribbed cuffs and hem.' },
-        { name: 'EMBLEM Classic Varsity', cat: 'varsity', type: 'classic', price: '₦125,000', img: IMG.crowdShow, badge: 'Premium', caption: 'Timeless varsity cut, gold-embroidered B7.' },
+        { name: 'CROWNGUARD Letterman', cat: 'varsity', type: 'letterman', price: '₦140,000', img: IMG.varsityBlue, badge: 'Limited', caption: 'Wool body, leather sleeves, chenille patch.' },
+        { name: 'CRIMSON Bomber', cat: 'varsity', type: 'bomber', price: '₦130,000', img: IMG.varsityRed, badge: 'New', caption: 'Crimson satin bomber, ribbed cuffs and hem.' },
+        { name: 'EMBLEM Classic Varsity', cat: 'varsity', type: 'classic', price: '₦125,000', img: IMG.varsityVintage, badge: 'Premium', caption: 'Timeless varsity cut, gold-embroidered B7.' },
 
         // OUTERWEAR
-        { name: 'IMPERIUM Trench Coat', cat: 'outerwear', type: 'trench', price: '₦175,000', img: IMG.womanPattern, badge: 'Limited', caption: 'Full-length trench, belted waist.' },
-        { name: 'ARCTIC Parka', cat: 'outerwear', type: 'parka', price: '₦160,000', img: IMG.runwayOrange, badge: 'New', caption: 'Insulated parka, faux-fur trim hood.' },
-        { name: 'ZENITH Puffer', cat: 'outerwear', type: 'puffer', price: '₦145,000', img: IMG.blazer, badge: 'Premium', caption: 'Quilted puffer, wind-resistant shell.' },
+        { name: 'IMPERIUM Trench Coat', cat: 'outerwear', type: 'trench', price: '₦175,000', img: IMG.trenchDetail, badge: 'Limited', caption: 'Full-length trench, belted waist.' },
+        { name: 'ARCTIC Coat', cat: 'outerwear', type: 'parka', price: '₦160,000', img: IMG.trench, badge: 'New', caption: 'Layered statement coat, all-season.' },
+        { name: 'ZENITH Coat', cat: 'outerwear', type: 'puffer', price: '₦145,000', img: IMG.coats, badge: 'Premium', caption: 'Structured outer layer, city-ready.' },
 
         // PREMIUM TEES
-        { name: 'BELIEVER Graphic Tee', cat: 'tees', type: 'graphic', price: '₦28,000', img: IMG.crowdMan, badge: 'Bestseller', caption: 'Heavyweight cotton, gold foil print.' },
-        { name: 'ESSENCE Plain Tee', cat: 'tees', type: 'plain', price: '₦22,000', img: IMG.buttonUp, badge: 'Classic', caption: 'Pima cotton essential, boxed fit.' },
-        { name: 'AMPLE Oversized Tee', cat: 'tees', type: 'oversized', price: '₦26,000', img: IMG.womenGroup, badge: 'New', caption: 'Drop-shoulder oversized tee.' },
+        { name: 'BELIEVER Graphic Tee', cat: 'tees', type: 'graphic', price: '₦28,000', img: IMG.graphicTop, badge: 'Bestseller', caption: 'Heavyweight cotton, BOBS7N print.' },
+        { name: 'ESSENCE Plain Tee', cat: 'tees', type: 'plain', price: '₦22,000', img: IMG.teeHangers, badge: 'Classic', caption: 'Pima cotton essential, boxed fit.' },
+        { name: 'AMPLE Oversized Tee', cat: 'tees', type: 'oversized', price: '₦26,000', img: IMG.teeOversized, badge: 'New', caption: 'Drop-shoulder oversized tee.' },
     ];
 
     let activeCat = 'all';
