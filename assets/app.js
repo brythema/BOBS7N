@@ -192,7 +192,7 @@
         if (cart.length === 0) { showToast('Your cart is empty!'); return; }
         let text = 'Hello BOBS7N,%0A%0AI would like to order:%0A';
         cart.forEach(item => { text += `• ${item.name} (Size: ${item.size})%0A`; });
-        text += '%0APlease confirm availability and pricing. Thank you!';
+        text += '%0AThese are custom-made to order. Please share availability and next steps. Thank you!';
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank', 'noopener');
     };
 
@@ -219,7 +219,7 @@
         if (qvImg) qvImg.src = imgSrc;
         if (qvName) qvName.textContent = productName;
         if (qvCaption) qvCaption.textContent = caption || '';
-        if (qvPrice) qvPrice.textContent = price || '';
+        if (qvPrice) { qvPrice.style.display = price ? '' : 'none'; qvPrice.textContent = price || ''; }
         const sizeBtns = document.querySelectorAll('#qvSizes .size-btn');
         sizeBtns.forEach(b => b.classList.remove('selected'));
         const defaultSize = document.querySelector('#qvSizes .size-btn[data-size="L"]');
